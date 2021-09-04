@@ -1,5 +1,5 @@
-# SubUI-browser
-Proof of concept of custom widgets and apps running on the Z Flip3 cover screen. Adds a widget to Z Flip3 cover screen that lets you launch a web browser-like app on the cover. Play music with Spotify, browse Reddit, watch YouTube. 
+# Z Flip Launcher
+Adds a widget to Z Flip3 cover screen that lets you launch installed apps on the cover screen. 
 
 No onscreen keyboard (yet)
 
