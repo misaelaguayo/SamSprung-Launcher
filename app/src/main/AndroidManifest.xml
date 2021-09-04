@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sec.android.app.shealth">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecondScreenTest">
-        <service android:name="com.sec.android.app.shealth.AppLauncherService"
-            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,17 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".BrowserActivity"
-            android:exported="true">
-            <meta-data android:name="com.samsung.android.activity.showWhenLocked" android:value="true"/>
-        </activity>
         <receiver android:name="com.samsung.android.app.shealth.tracker.pedometer.service.coverwidget.StepCoverAppWidget" android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/zflip_cover_screen_widget"/>
         </receiver>
+        <service
+            android:name="com.samsung.android.app.shealth.tracker.pedometer.service.coverwidget.StepWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" android:exported="true" />
     </application>
 
 </manifest>

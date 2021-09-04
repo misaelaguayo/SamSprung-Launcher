@@ -23,14 +23,31 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Starting URL:" />
+            android:text="@string/package_name" />
 
         <EditText
-            android:id="@+id/startingUrl"
+            android:id="@+id/launchPackage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Starting URL"
+            android:hint="@string/package_name"
+            android:inputType="textPersonName" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/launch_activity" />
+
+        <EditText
+            android:id="@+id/launchActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/launch_activity"
             android:inputType="textPersonName" />
 
         <Space
@@ -38,10 +55,10 @@
             android:layout_height="12dp" />
 
         <Button
-            android:id="@+id/openBrowser"
+            android:id="@+id/launchIntent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Open browser on main screen to log in to websites" />
+            android:text="@string/intent_test_button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
