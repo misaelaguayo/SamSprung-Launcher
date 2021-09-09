@@ -14,7 +14,7 @@ android {
         versionName "1.1"
     }
 
-    project.archivesBaseName = "ZFlip-Launcher-" + 'git rev-parse --short HEAD'.execute().text.trim()
+    project.archivesBaseName = "SamSprung-" + 'git rev-parse --short HEAD'.execute().text.trim()
 
     splits {
         abi {
@@ -37,6 +37,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    lintOptions {
+        abortOnError false
     }
 
     applicationVariants.all { variant ->
