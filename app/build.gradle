@@ -31,6 +31,7 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
         debug {
             initWith release
@@ -40,10 +41,7 @@ android {
                 keystoreProps.load(new FileInputStream(rootProject.file("keystore.properties")))
                 signingConfigs {
                     debug {
-                        keyAlias keystoreProps['keyAlias']
-                        keyPassword keystoreProps['keyPassword']
-                        storeFile file(keystoreProps['storeFile'])
-                        storePassword keystoreProps['storePassword']
+                        signingConfig signingConfigs.debug
                     }
                 }
                 buildTypes.debug.signingConfig signingConfigs.debug
